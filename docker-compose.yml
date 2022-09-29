@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+  prod:
+    container_name: react-final
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '1337:80'
+  dev:
+    container_name: react-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
